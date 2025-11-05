@@ -70,7 +70,7 @@ On the MNIST dataset, adding more convolutional layers usually provides only ver
 | Model | Validation Accuracy | Test Accuracy | Key Hyperparameters |
 |--------|---------------------|----------------|---------------------|
 | SVM (RBF) |  |  |  |
-| MLP (1 hidden = 128) |  |  |  |
+| MLP (2 hidden layers) | 98.11% | 98% | hidden layers = [128, 64], learning rate = 0.009, batch size = 64, dropout = 0.2, L2 regularization = 1e-4 |
 | CNN (2 conv × 5×5) | 99.18 % | 99.24 % | kernel = 5, conv layers = 2, lr = 0.001, dropout = 0.25 |
 
 Table 1 provides a comparison of the final test accuracies obtained by the three classifiers.  
