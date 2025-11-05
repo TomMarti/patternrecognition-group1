@@ -83,5 +83,5 @@ On the MNIST dataset, all three models — SVM, MLP, and CNN — achieved high p
 | MLP (2 hidden layers) | 98.11% | 98% | hidden layers = [128, 64], learning rate = 0.009, batch size = 64, dropout = 0.2, L2 regularization = 1e-4 |
 | CNN (2 conv × 5×5) | 99.18 % | 99.24 % | kernel = 5, conv layers = 2, lr = 0.001, dropout = 0.25 |
 
-The CNN achieved the highest accuracy, confirming the advantage of spatial feature extraction over the fully connected MLP and the kernel-based SVM for image data. However on the MNIST dataset, all three models — SVM, MLP, and CNN — achieved high performance. 
+The CNN achieved the highest accuracy, confirming the advantage of spatial feature extraction over the fully connected MLP and the kernel-based SVM for image data.
 
