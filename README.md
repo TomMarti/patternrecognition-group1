@@ -25,14 +25,14 @@ __Best Configuration__ : We tested the RBF model on different magnitudes of C-Va
 
 __Model Evaluation__ : The Linear model achieved an accuracy of ~0.917, while the RBF model with the optimal C-Value achieved an accuracy of ~0.987 on the test set. 
 
-__Additional Experiments__ : We tried to graph the RBF function to see better how the mdel chooses to classify the numbers, but we weren't able to properly able to interpret the large vectors as 2D vectors in a way which makes sense to view.
+__Additional Experiments__ : We tried to graph the RBF function to see better how the model chooses to classify the numbers, but we were not able to properly interpret the large vectors as 2D vectors in a way which makes sense to view.
 
 #### Results
 ![SVM RBF C-values vs Accuracy](./SVM/SVM_RBF_Ctest.png)
 
-Accuracy: ~0.987
+Test Accuracy: ~0.987
 
-## Discussion
+__Discussion__ :
 For the current task of identifying numbers the SVM RBF model looks a bit superior to the Linear SVM model. The SVM RBF performs very well on this task with a high accuracy.  
 
 ### MLP
@@ -63,24 +63,25 @@ The best-performing model used two convolutional layers, kernel size 5, and lear
 Smaller kernels or lower learning rates slightly reduced accuracy, while a single-layer CNN underperformed.
 The validation and test metrics were closely aligned, indicating good generalization and minimal overfitting.
 
-
 #### Results
 ![training accuracy](./CNN/exploration/runs/cnn_baseline/acc.png)
 ![training loss](./CNN/exploration/runs/cnn_baseline/loss.png)
 ![confusion matrix](./CNN/exploration/runs/cnn_baseline/confusion_matrix.png)
 
-## Discussion
+Test accuracy: 0.992
 
-On the MNIST dataset, adding more convolutional layers usually provides only very small improvements, because the images are simple, grayscale, and low-resolution. Two convolutional layers are already enough to capture the essential hierarchical features — from edges to digit shapes — and achieve test accuracies around 99 %. Deeper models can slightly increase accuracy (perhaps by 0.1 – 0.3 %) but at the cost of longer training times and a higher risk of overfitting, so ... worth trying?
+__Discussion__ : On the MNIST dataset, adding more convolutional layers usually provides only very small improvements, because the images are simple, grayscale, and low-resolution. Two convolutional layers are already enough to capture the essential hierarchical features — from edges to digit shapes — and achieve test accuracies around 99 %. Deeper models can slightly increase accuracy (perhaps by 0.1 – 0.3 %) but at the cost of longer training times and a higher risk of overfitting, so ... worth trying?
+
+## Summary
+
+On the MNIST dataset, all three models — SVM, MLP, and CNN — achieved high performance. Table 1 provides a comparison of the final test accuracies obtained by the three classifiers
 
 **Table 1 – Comparison of Classifier Performance**
 | Model | Validation Accuracy | Test Accuracy | Key Hyperparameters |
 |--------|---------------------|----------------|---------------------|
-| SVM (RBF) |  |  |  |
+| SVM (RBF) | - | 98.7% | C = 10, γ = 0.001 |
 | MLP (2 hidden layers) | 98.11% | 98% | hidden layers = [128, 64], learning rate = 0.009, batch size = 64, dropout = 0.2, L2 regularization = 1e-4 |
 | CNN (2 conv × 5×5) | 99.18 % | 99.24 % | kernel = 5, conv layers = 2, lr = 0.001, dropout = 0.25 |
 
-Table 1 provides a comparison of the final test accuracies obtained by the three classifiers.  
-The CNN achieved the highest accuracy, confirming the advantage of spatial feature extraction over the fully connected MLP and the kernel-based SVM for image data.  
-*(Note: This text and the table serve as an example/template and need to be adapted once everybody have added their final results.)*
+The CNN achieved the highest accuracy, confirming the advantage of spatial feature extraction over the fully connected MLP and the kernel-based SVM for image data. However on the MNIST dataset, all three models — SVM, MLP, and CNN — achieved high performance. 
 
